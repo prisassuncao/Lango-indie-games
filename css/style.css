@@ -1020,3 +1020,9 @@ img {
   width: 100%;
   margin: 0 auto;
 }
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
