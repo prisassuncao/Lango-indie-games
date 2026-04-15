@@ -99,7 +99,7 @@ LOGO
   float: left;
   width: 150px;
   height: 60px;
-  margin-top: 10px;
+  margin-top: 5px;
   background: url(../images/logo.svg) no-repeat center;
   background-size: contain;
 }
