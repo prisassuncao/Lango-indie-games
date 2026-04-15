@@ -96,11 +96,11 @@ LOGO
 */
 
 .logo {   
-  position: absolute;
-  margin-top: 5px;
-  width: 110px;
-  max-height:100%;
   float: left;
+  position: relative;
+  width: 150px;
+  margin-top: 10px;
+  max-height:100%;
   display: block;
   background-repeat: no-repeat;    
   background-image: url(../images/logo.svg);
