@@ -95,35 +95,22 @@ LOGO
 --------------------------------
 */
 
-.logo {   
+.logo {
   float: left;
-  position: relative;
   width: 150px;
+  height: 60px;
   margin-top: 10px;
-  max-height:100%;
-  display: block;
-  background-repeat: no-repeat;    
-  background-image: url(../images/logo.svg);
-  overflow: hidden;
-    
-}
-.logo h1 {
-  display: block;
-  font-size: 25px;
-  text-align: center;
-  letter-spacing: 2px;
-  color: transparent;
-    
+  background: url(../images/logo.svg) no-repeat center;
+  background-size: contain;
 }
 /*
 --------------------------------
 SEARCH
 --------------------------------
 */  
-.search-box{
-  display: inline-flex;
-  float: right; 
-  padding-top: 33px;  
+.search-box {
+  float: right;
+  margin-top: 20px;
 }
 #input-search {
   width: 135px;
@@ -185,10 +172,9 @@ i{
 NAVEGATION
 --------------------------------
 */
-.main-nav{  
-  position: relative;
-  top: 30px;
-  right: 30px;
+.main-nav {
+  clear: both;
+  margin-top: 10px;
 }
 .main-nav ul{
   display: flex;
@@ -1076,4 +1062,27 @@ img {
 }
 * {
   max-width: 100%;
+}
+@media (max-width: 768px) {
+
+  .logo,
+  .search-box,
+  .main-nav {
+    float: none;
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .main-nav {
+    clear: both;
+  }
+
+  .main-nav ul {
+    display: block;
+  }
+
+  .main-nav ul li {
+    display: block;
+  }
 }
