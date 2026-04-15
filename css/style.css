@@ -1063,26 +1063,3 @@ img {
 * {
   max-width: 100%;
 }
-@media (max-width: 768px) {
-
-  .logo,
-  .search-box,
-  .main-nav {
-    float: none;
-    width: 100%;
-    text-align: center;
-    margin: 10px 0;
-  }
-
-  .main-nav {
-    clear: both;
-  }
-
-  .main-nav ul {
-    display: block;
-  }
-
-  .main-nav ul li {
-    display: block;
-  }
-}
