@@ -1,5 +1,5 @@
 /* =========================
-   RESET BÁSICO
+   RESET
 ========================= */
 
 * {
@@ -8,12 +8,16 @@
   box-sizing: border-box;
 }
 
-html, body {
-  min-height: 100%;
+body {
   font-family: 'Roboto', Arial, sans-serif;
   font-size: 15px;
-  background-color: #f4f4f1;
-  overflow-x: hidden;
+  background: #f4f4f1;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 ul {
@@ -25,19 +29,13 @@ a {
   color: #282525;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
 /* =========================
    CONTAINER
 ========================= */
 
 .container {
-  max-width: 1200px;
   width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -48,92 +46,101 @@ img {
 
 .header {
   background: #D4EEF6;
-}
-
-.header .container {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 10px 0;
   flex-wrap: wrap;
-  gap: 15px;
 }
 
-/* LOGO - CORREÇÃO DO SEU BUG */
+/* logo NÃO pode ser absolute */
 .logo {
   position: relative;
-  float: none;
+  width: auto;
+  display: flex;
+  align-items: center;
+  background: none;
 }
 
-/* NAV */
-.main-nav ul {
-  display: flex;
-  gap: 10px;
-  align-items: center;
+.logo h1 {
+  font-size: 20px;
+  color: #1D5BAA;
+  font-weight: 700;
 }
 
 /* SEARCH */
 .search-box {
   display: flex;
   align-items: center;
+  gap: 0;
+}
+
+#input-search {
+  height: 35px;
+  padding: 0 10px;
+  border: 2px solid #1D5BAA;
+  border-radius: 20px 0 0 20px;
+  outline: none;
+}
+
+.search-box-button {
+  height: 35px;
+  padding: 0 10px;
+  border: 2px solid #1D5BAA;
+  border-left: none;
+  border-radius: 0 20px 20px 0;
+  background: transparent;
+  cursor: pointer;
 }
 
 /* =========================
-   MENU DROPDOWN
+   MENU (CORRIGIDO)
 ========================= */
 
-.main-nav ul li {
-  position: relative;
+.main-nav {
+  width: 100%;
 }
 
+.main-nav ul {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  padding: 10px;
+  font-size: 16px;
+  color: #92b9ed;
+}
+
+.main-nav a:hover {
+  color: #1D5BAA;
+}
+
+/* dropdown */
 .main-nav ul ul {
-  position: absolute;
-  top: 100%;
-  left: 0;
   display: none;
-  flex-direction: column;
+  position: absolute;
   background: #1D5BAA;
 }
 
 .main-nav ul li:hover ul {
-  display: flex;
+  display: block;
 }
 
 /* =========================
-   GRID (SUBSTITUI FLOATS)
+   GRID (REMOVE FLOAT PROBLEMS)
 ========================= */
 
 .col-1,
 .col-2,
 .col-3 {
   float: none;
+  display: inline-block;
+  vertical-align: top;
   width: 100%;
-}
-
-@media (min-width: 768px) {
-  .col-1 {
-    width: 33.33%;
-    float: left;
-  }
-
-  .col-2 {
-    width: 33.33%;
-    float: left;
-  }
-
-  .col-3 {
-    width: 50%;
-    float: left;
-  }
-}
-
-/* =========================
-   FEATURE
-========================= */
-
-.feature {
-  background: url(../images/racket.jpg) no-repeat center;
-  background-size: cover;
-  padding: 50px 0;
 }
 
 /* =========================
@@ -142,14 +149,15 @@ img {
 
 @media (max-width: 768px) {
 
-  .header .container {
+  .header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    gap: 10px;
   }
 
   .main-nav ul {
     flex-direction: column;
-    width: 100%;
+    align-items: center;
   }
 
   .search-box {
@@ -157,14 +165,7 @@ img {
     justify-content: center;
   }
 
-  .col-1,
-  .col-2,
-  .col-3 {
-    width: 100%;
-    float: none;
-  }
-
-  .feature-text p {
-    width: 100%;
+  .logo h1 {
+    text-align: center;
   }
 }
